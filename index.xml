@@ -1,46 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Project Symphony Documentation on Project Symphony Docs</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content in Project Symphony Documentation on Project Symphony Docs</description>
+    <title>Project Symphony</title>
+    <link>https://eclipse.dev/symphony/</link>
+    <description>Recent content on Project Symphony</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Overview</title>
-      <link>//localhost:1313/concepts/overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/concepts/overview/</guid>
-      <description>&lt;p&gt;Symphony operates within an orchestration layer, strategically positioned atop preexisting tools and services. To establish uniformity amidst the diverse edge environment, Symphony relies on a set of fundamental high-level abstractions. These encompass state-seeking, graph, workflow, and app models. These foundational abstractions empower Symphony to deliver robust functionalities across various technologies and platforms while maintaining a concise object model.&lt;/p&gt;&#xA;&lt;h2 id=&#34;abstractions&#34;&gt;Abstractions&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./state_seeking.md&#34;&gt;State seeking&lt;/a&gt;: How Symphony brings the current state of a system to the desired state.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./information_graph.md&#34;&gt;Information graph&lt;/a&gt;: How Symphony organizes, accesses, and synchronizes enterprise information.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./workflows.md&#34;&gt;Workflows&lt;/a&gt;: How Symphony manages multi-stage deployment scenarios.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./orchestration_model.md&#34;&gt;App orchestration model&lt;/a&gt;: How Symphony defines the components that make up a scenario.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>App Orchestration Model</title>
-      <link>//localhost:1313/concepts/abstractions/app_orch_model/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/concepts/abstractions/app_orch_model/</guid>
-      <description>&lt;p&gt;As an orchestrator, Symphony purposefully designs an application model tailored for orchestration. We refer to this specialized application model as the &lt;em&gt;app orchestration model&lt;/em&gt; to distinguish it from a standard application model.&lt;/p&gt;&#xA;&lt;p&gt;An app orchestration model defines a collection of interconnected components. Each component can be represented by a different artifact type, such as a Helm Chart, a Kubernetes deployment spec, a Docker container, a configuration map, or anything else. As you can see, Symphony orchestration model allows multiple artifacts from different systems be assembled into one consistent package.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Information Graph</title>
-      <link>//localhost:1313/concepts/abstractions/info_graph/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/concepts/abstractions/info_graph/</guid>
-      <description>&lt;p&gt;Symphony provides a generic graph data structure through the object type &lt;code&gt;catalog&lt;/code&gt;. A catalog can be used to model any information ontologies, hardware topologies, asset trees, BOMs, artifact catalogs and more.&lt;/p&gt;&#xA;&lt;p&gt;Typically, an enterprise needs to manage diverse catalogs encompassing assets, software packages, configurations, and policies. Various personnel within an organization often require access to these catalogs, each with their unique perspectives and scopes. Unfortunately, this valuable information is frequently dispersed across multiple storage repositories behind different systems. This fragmented scenario poses a considerable challenge when it comes to gaining a comprehensive and coherent understanding of the organization&amp;rsquo;s inventory.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>State Seeking</title>
-      <link>//localhost:1313/concepts/abstractions/state_seeking/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/concepts/abstractions/state_seeking/</guid>
-      <description>&lt;p&gt;Many software management problems can be viewed as a state seeking problem: a system reports its current state, a user specifies a new desired state, and a state seeking system brings the current state towards the desired state.&lt;/p&gt;&#xA;&lt;p&gt;With this high-level abstraction, Symphony unifies the workflow of software deployment, software update, configuration management, policy management, device update, firmware update, OS update and many other tasks where a system needs to be updated according to a given new state.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Workflows</title>
-      <link>//localhost:1313/concepts/abstractions/workflows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/concepts/abstractions/workflows/</guid>
-      <description>&lt;p&gt;Symphony employs a &lt;a href=&#34;//localhost:1313/concepts/abstractions/state_seeking/&#34;&gt;state-seeking&lt;/a&gt; approach to maintain a system according to user-defined desired states. Nevertheless, there are situations where orchestrating system control necessitates capabilities beyond state-seeking. For example, a scenario may require an approval process prior to initiating a deployment; in such cases, Symphony needs the capability to trigger an approval workflow before proceeding with its state-seeking operations. Another example is managing canary deployments, which requires the multi-step operation of rolling out a new version, adjusting your traffic shapes, validating the new version, and then gradually shifting traffic to the new version (and rolling back as needed).&lt;/p&gt;</description>
-    </item>
+    <language>en</language>
+    <copyright>© Project Symphony Authors</copyright>
+    <atom:link href="https://eclipse.dev/symphony/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
