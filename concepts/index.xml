@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Symphony Concepts on Project Symphony Docs</title>
+    <link>//localhost:1313/concepts/</link>
+    <description>Recent content in Symphony Concepts on Project Symphony Docs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="//localhost:1313/concepts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overview</title>
+      <link>//localhost:1313/concepts/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/concepts/overview/</guid>
+      <description>&lt;p&gt;Symphony operates within an orchestration layer, strategically positioned atop preexisting tools and services. To establish uniformity amidst the diverse edge environment, Symphony relies on a set of fundamental high-level abstractions. These encompass state-seeking, graph, workflow, and app models. These foundational abstractions empower Symphony to deliver robust functionalities across various technologies and platforms while maintaining a concise object model.&lt;/p&gt;&#xA;&lt;h2 id=&#34;abstractions&#34;&gt;Abstractions&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./state_seeking.md&#34;&gt;State seeking&lt;/a&gt;: How Symphony brings the current state of a system to the desired state.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./information_graph.md&#34;&gt;Information graph&lt;/a&gt;: How Symphony organizes, accesses, and synchronizes enterprise information.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./workflows.md&#34;&gt;Workflows&lt;/a&gt;: How Symphony manages multi-stage deployment scenarios.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./orchestration_model.md&#34;&gt;App orchestration model&lt;/a&gt;: How Symphony defines the components that make up a scenario.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

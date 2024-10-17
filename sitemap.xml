@@ -2,10 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://eclipse.dev/symphony/</loc>
+    <loc>//localhost:1313/</loc>
   </url><url>
-    <loc>https://eclipse.dev/symphony/categories/</loc>
+    <loc>//localhost:1313/concepts/overview/</loc>
   </url><url>
-    <loc>https://eclipse.dev/symphony/tags/</loc>
+    <loc>//localhost:1313/concepts/</loc>
+  </url><url>
+    <loc>//localhost:1313/concepts/abstractions/</loc>
+  </url><url>
+    <loc>//localhost:1313/concepts/abstractions/app_orch_model/</loc>
+  </url><url>
+    <loc>//localhost:1313/concepts/abstractions/info_graph/</loc>
+  </url><url>
+    <loc>//localhost:1313/concepts/abstractions/state_seeking/</loc>
+  </url><url>
+    <loc>//localhost:1313/concepts/abstractions/workflows/</loc>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

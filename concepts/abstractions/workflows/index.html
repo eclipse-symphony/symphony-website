@@ -1,0 +1,254 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Workflows | Project Symphony Docs</title>
+<meta name="description" content="Symphony employs a state-seeking approach to maintain a system according to user-defined desired states. Nevertheless, there are situations where orchestrating system control necessitates capabilities beyond state-seeking. For example, a scenario may require an approval process prior to initiating a deployment; in such cases, Symphony needs the capability to trigger an approval workflow before proceeding with its state-seeking operations. Another example is managing canary deployments, which requires the multi-step operation of rolling out a new version, adjusting your traffic shapes, validating the new version, and then gradually shifting traffic to the new version (and rolling back as needed).">
+<meta property="og:url" content="//localhost:1313/concepts/abstractions/workflows/">
+  <meta property="og:site_name" content="Project Symphony Docs">
+  <meta property="og:title" content="Workflows">
+  <meta property="og:description" content="Symphony employs a state-seeking approach to maintain a system according to user-defined desired states. Nevertheless, there are situations where orchestrating system control necessitates capabilities beyond state-seeking. For example, a scenario may require an approval process prior to initiating a deployment; in such cases, Symphony needs the capability to trigger an approval workflow before proceeding with its state-seeking operations. Another example is managing canary deployments, which requires the multi-step operation of rolling out a new version, adjusting your traffic shapes, validating the new version, and then gradually shifting traffic to the new version (and rolling back as needed).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="concepts">
+
+  <meta itemprop="name" content="Workflows">
+  <meta itemprop="description" content="Symphony employs a state-seeking approach to maintain a system according to user-defined desired states. Nevertheless, there are situations where orchestrating system control necessitates capabilities beyond state-seeking. For example, a scenario may require an approval process prior to initiating a deployment; in such cases, Symphony needs the capability to trigger an approval workflow before proceeding with its state-seeking operations. Another example is managing canary deployments, which requires the multi-step operation of rolling out a new version, adjusting your traffic shapes, validating the new version, and then gradually shifting traffic to the new version (and rolling back as needed).">
+  <meta itemprop="wordCount" content="442">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Workflows">
+  <meta name="twitter:description" content="Symphony employs a state-seeking approach to maintain a system according to user-defined desired states. Nevertheless, there are situations where orchestrating system control necessitates capabilities beyond state-seeking. For example, a scenario may require an approval process prior to initiating a deployment; in such cases, Symphony needs the capability to trigger an approval workflow before proceeding with its state-seeking operations. Another example is managing canary deployments, which requires the multi-step operation of rolling out a new version, adjusting your traffic shapes, validating the new version, and then gradually shifting traffic to the new version (and rolling back as needed).">
+
+
+
+
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "bffu3v0r2p");
+</script>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="font-weight-bold navbar-brand__name">Project Symphony Docs</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="https://eclipse.dev/symphony/" target="_blank" ><i class='fas fa-home'></i><span>Home</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/eclipse-symphony/symphony" target="_blank" ><i class='fab fa-github'></i><span>GitHub</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <div id="content-mobile">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  </div>
+  <div id="content-desktop"></div>
+  <nav class="collapse td-sidebar-nav foldable-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Project Symphony Documentation" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-concepts-li">
+  <input type="checkbox" id="m-concepts-check" checked/>
+  <label for="m-concepts-check"><a  class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-concepts"><span class="">Concepts</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsoverview-li">
+  <input type="checkbox" id="m-conceptsoverview-check"/>
+  <label for="m-conceptsoverview-check"><a href="/concepts/overview/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsoverview"><span class="">Overview</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-conceptsabstractions-li">
+  <input type="checkbox" id="m-conceptsabstractions-check" checked/>
+  <label for="m-conceptsabstractions-check"><a  class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-conceptsabstractions"><span class="">Abstractions</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsabstractionsapp_orch_model-li">
+  <input type="checkbox" id="m-conceptsabstractionsapp_orch_model-check"/>
+  <label for="m-conceptsabstractionsapp_orch_model-check"><a href="/concepts/abstractions/app_orch_model/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsapp_orch_model"><span class="">App Orchestration Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsabstractionsinfo_graph-li">
+  <input type="checkbox" id="m-conceptsabstractionsinfo_graph-check"/>
+  <label for="m-conceptsabstractionsinfo_graph-check"><a href="/concepts/abstractions/info_graph/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsinfo_graph"><span class="">Information Graph</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsabstractionsstate_seeking-li">
+  <input type="checkbox" id="m-conceptsabstractionsstate_seeking-check"/>
+  <label for="m-conceptsabstractionsstate_seeking-check"><a href="/concepts/abstractions/state_seeking/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsstate_seeking"><span class="">State Seeking</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-conceptsabstractionsworkflows-li">
+  <input type="checkbox" id="m-conceptsabstractionsworkflows-check" checked/>
+  <label for="m-conceptsabstractionsworkflows-check"><a href="/concepts/abstractions/workflows/" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsworkflows"><span class="td-sidebar-nav-active-item">Workflows</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+  
+  
+  
+  
+  
+  
+  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+  
+  
+  </div>
+
+
+            
+
+
+
+
+            
+
+
+
+
+
+
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/concepts/">Concepts</a></li>
+  <li class="breadcrumb-item">
+    <a href="/concepts/abstractions/">Abstractions</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Workflows</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Workflows</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<p>Symphony employs a <a href="//localhost:1313/concepts/abstractions/state_seeking/">state-seeking</a> approach to maintain a system according to user-defined desired states. Nevertheless, there are situations where orchestrating system control necessitates capabilities beyond state-seeking. For example, a scenario may require an approval process prior to initiating a deployment; in such cases, Symphony needs the capability to trigger an approval workflow before proceeding with its state-seeking operations. Another example is managing canary deployments, which requires the multi-step operation of rolling out a new version, adjusting your traffic shapes, validating the new version, and then gradually shifting traffic to the new version (and rolling back as needed).</p>
+<p>These complex deployment processes are represented by a workflow, which is called a <em>campaign</em> in Symphony. A campaign comprises one or multiple <em>stages</em>. When one stage finishes, it runs a selector that selects the next stage. And when no new stages are selected, the campaign finishes.</p>
+<p>Comparing to some other workflow engines, Symphony has the following features specifically designed for distributed edge scenarios:</p>
+<ul>
+<li>
+<p><strong>Remote execution</strong>: Symphony can dispatch a specific stage to a distinct Symphony control plane for execution, retrieve the resultant output, and seamlessly progress to the subsequent stage in the workflow.</p>
+</li>
+<li>
+<p><strong>Simple map-reduce</strong>: A stage can fan out across multiple contexts, running in parallel, and aggregate the results into a cohesive outcome. When combined with remote execution, the map-reduce feature can be used to coordinate multi-site rollouts from a central location.</p>
+</li>
+<li>
+<p><strong>External driver</strong>: A Symphony campaign can drive itself to completion. Or, it can be put into a stepped mode where it needs an external workflow engine to drive it forward. In this model, a Symphony campaign provides a collection of stateful nano services that can be invoked by another workflow engine. For example, many customers have their existing CI/CD pipelines in systems like GitHub Actions and Jenkins. Symphony allows customers to maintain their CI/CD pipelines in these systems, leveraging the rich ecosystem of ingredients. Only when they need to call out to specific Symphony functionalities like multi-site deployment, they can call out to Symphony campaigns. And because Symphony campaigns are stateful, customers can carry states across systems and form a continuous flow although stages may interact among multiple systems.</p>
+</li>
+</ul>
+<h2 id="activation-and-events">Activation and events</h2>
+<p>A campaign can be activated by creating the corresponding <em>activation</em> object. Unless explicitly disabled, a campaign can be activated multiple times in parallel. Each activation object maintains its own state and context. Symphony uses an event-based approach to drive the activation objects. And it allows steps in a campaign to be executed remotely on a different Symphony control plane.</p>
+<p>After a stage&rsquo;s execution, the campaign enters a dormant state, awaiting an incoming event to awaken and activate the next stage.</p>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+<script src="/js/copy-code-button.js"></script>
+<script src="/js/clarity.js"></script>
+
+  </body>
+</html>

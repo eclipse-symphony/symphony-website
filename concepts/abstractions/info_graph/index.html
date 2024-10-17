@@ -1,0 +1,288 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Information Graph | Project Symphony Docs</title>
+<meta name="description" content="Symphony provides a generic graph data structure through the object type catalog. A catalog can be used to model any information ontologies, hardware topologies, asset trees, BOMs, artifact catalogs and more.
+Typically, an enterprise needs to manage diverse catalogs encompassing assets, software packages, configurations, and policies. Various personnel within an organization often require access to these catalogs, each with their unique perspectives and scopes. Unfortunately, this valuable information is frequently dispersed across multiple storage repositories behind different systems. This fragmented scenario poses a considerable challenge when it comes to gaining a comprehensive and coherent understanding of the organization&rsquo;s inventory.">
+<meta property="og:url" content="//localhost:1313/concepts/abstractions/info_graph/">
+  <meta property="og:site_name" content="Project Symphony Docs">
+  <meta property="og:title" content="Information Graph">
+  <meta property="og:description" content="Symphony provides a generic graph data structure through the object type catalog. A catalog can be used to model any information ontologies, hardware topologies, asset trees, BOMs, artifact catalogs and more.
+Typically, an enterprise needs to manage diverse catalogs encompassing assets, software packages, configurations, and policies. Various personnel within an organization often require access to these catalogs, each with their unique perspectives and scopes. Unfortunately, this valuable information is frequently dispersed across multiple storage repositories behind different systems. This fragmented scenario poses a considerable challenge when it comes to gaining a comprehensive and coherent understanding of the organization’s inventory.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="concepts">
+
+  <meta itemprop="name" content="Information Graph">
+  <meta itemprop="description" content="Symphony provides a generic graph data structure through the object type catalog. A catalog can be used to model any information ontologies, hardware topologies, asset trees, BOMs, artifact catalogs and more.
+Typically, an enterprise needs to manage diverse catalogs encompassing assets, software packages, configurations, and policies. Various personnel within an organization often require access to these catalogs, each with their unique perspectives and scopes. Unfortunately, this valuable information is frequently dispersed across multiple storage repositories behind different systems. This fragmented scenario poses a considerable challenge when it comes to gaining a comprehensive and coherent understanding of the organization’s inventory.">
+  <meta itemprop="wordCount" content="623">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Information Graph">
+  <meta name="twitter:description" content="Symphony provides a generic graph data structure through the object type catalog. A catalog can be used to model any information ontologies, hardware topologies, asset trees, BOMs, artifact catalogs and more.
+Typically, an enterprise needs to manage diverse catalogs encompassing assets, software packages, configurations, and policies. Various personnel within an organization often require access to these catalogs, each with their unique perspectives and scopes. Unfortunately, this valuable information is frequently dispersed across multiple storage repositories behind different systems. This fragmented scenario poses a considerable challenge when it comes to gaining a comprehensive and coherent understanding of the organization’s inventory.">
+
+
+
+
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "bffu3v0r2p");
+</script>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="font-weight-bold navbar-brand__name">Project Symphony Docs</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="https://eclipse.dev/symphony/" target="_blank" ><i class='fas fa-home'></i><span>Home</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/eclipse-symphony/symphony" target="_blank" ><i class='fab fa-github'></i><span>GitHub</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <div id="content-mobile">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  </div>
+  <div id="content-desktop"></div>
+  <nav class="collapse td-sidebar-nav foldable-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Project Symphony Documentation" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-concepts-li">
+  <input type="checkbox" id="m-concepts-check" checked/>
+  <label for="m-concepts-check"><a  class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-concepts"><span class="">Concepts</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsoverview-li">
+  <input type="checkbox" id="m-conceptsoverview-check"/>
+  <label for="m-conceptsoverview-check"><a href="/concepts/overview/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsoverview"><span class="">Overview</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-conceptsabstractions-li">
+  <input type="checkbox" id="m-conceptsabstractions-check" checked/>
+  <label for="m-conceptsabstractions-check"><a  class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-conceptsabstractions"><span class="">Abstractions</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsabstractionsapp_orch_model-li">
+  <input type="checkbox" id="m-conceptsabstractionsapp_orch_model-check"/>
+  <label for="m-conceptsabstractionsapp_orch_model-check"><a href="/concepts/abstractions/app_orch_model/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsapp_orch_model"><span class="">App Orchestration Model</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-conceptsabstractionsinfo_graph-li">
+  <input type="checkbox" id="m-conceptsabstractionsinfo_graph-check" checked/>
+  <label for="m-conceptsabstractionsinfo_graph-check"><a href="/concepts/abstractions/info_graph/" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsinfo_graph"><span class="td-sidebar-nav-active-item">Information Graph</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsabstractionsstate_seeking-li">
+  <input type="checkbox" id="m-conceptsabstractionsstate_seeking-check"/>
+  <label for="m-conceptsabstractionsstate_seeking-check"><a href="/concepts/abstractions/state_seeking/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsstate_seeking"><span class="">State Seeking</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-conceptsabstractionsworkflows-li">
+  <input type="checkbox" id="m-conceptsabstractionsworkflows-check"/>
+  <label for="m-conceptsabstractionsworkflows-check"><a href="/concepts/abstractions/workflows/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-conceptsabstractionsworkflows"><span class="">Workflows</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+  
+  
+  
+  
+  
+  
+  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+  
+  
+  </div>
+
+
+            
+
+
+<hr />
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#catalog-and-synchronization">Catalog and synchronization</a></li>
+    <li><a href="#example-model-a-factory-using-the-isa95-model">Example: Model a factory using the ISA95 model</a></li>
+  </ul>
+</nav></div>
+
+
+
+            
+
+
+
+
+
+
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/concepts/">Concepts</a></li>
+  <li class="breadcrumb-item">
+    <a href="/concepts/abstractions/">Abstractions</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Information Graph</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Information Graph</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<p>Symphony provides a generic graph data structure through the object type <code>catalog</code>. A catalog can be used to model any information ontologies, hardware topologies, asset trees, BOMs, artifact catalogs and more.</p>
+<p>Typically, an enterprise needs to manage diverse catalogs encompassing assets, software packages, configurations, and policies. Various personnel within an organization often require access to these catalogs, each with their unique perspectives and scopes. Unfortunately, this valuable information is frequently dispersed across multiple storage repositories behind different systems. This fragmented scenario poses a considerable challenge when it comes to gaining a comprehensive and coherent understanding of the organization&rsquo;s inventory.</p>
+<p>Symphony views enterprise information ontology as a distributed graph. Instead of attempting to centralize the information within a singular repository or standardize its format, Symphony introduces a fundamental concept: the <em>catalog</em> object. The catalog object acts as an index pointing to specific pieces of information. Subsequently, Symphony deploys a graph engine atop these dispersed catalog objects, enabling the creation and interrogation of various information graphs, thus fostering flexibility and versatility in how information can be structured and accessed.</p>
+<p>Leveraging the Symphony catalog object and its accompanying graph engine, an enterprise gains the capability to effortlessly construct models of asset hierarchies, network topologies, template collections, and a myriad of other information graphs. Furthermore, Symphony objects can be annotated with catalog information, facilitating seamless cross-referencing across diverse catalogs in a user-friendly and intuitive manner.</p>
+<h2 id="catalog-and-synchronization">Catalog and synchronization</h2>
+<p>The Symphony catalog object is also a unit of synchronization. When multiple Symphony control planes are linked with each other, their catalogs can be synchronized among them with one-way synchronizations only. This means that at any given time, a catalog has one and only one owner. Others may hold read-only copies for their own usage. They can create overlays that override the original catalog object, but they can’t modify the original object. This design avoids complex two-way synchronizations and maintains a single source of truth for all catalog objects.</p>
+<p>Symphony refrains from synchronizing other types of objects because these objects often encapsulate unique states. States typically hold significance within specific, delimited contexts. In the event of indiscriminate state transmission, there arises the necessity to discern whether a given state applies to the current context. Symphony addresses this challenge by permitting snapshots of state to be transported within catalogs, but the underlying state itself remains confined to its designated scope. This approach obviates the need to differentiate between local and non-local states, as all states are inherently local. Remote management experiences are then facilitated by the transmission of read-only state indexes.</p>
+<h2 id="example-model-a-factory-using-the-isa95-model">Example: Model a factory using the ISA95 model</h2>
+<p>The following diagram illustrates a typical structure of an industrial automation system using the ISA95 model. Such a system encompasses multiple sub-systems, including ERP, MES, and SCADA, as well as various device categories like servers, PLCs, and sensors. Additionally, it involves multiple network connections, various user roles, policies, and numerous other components.</p>
+<p>Using Symphony Catalogs, you can model various aspects of the system as graphs and link into existing data sources like ERP systems. And then, you can associate dynamic states of your software, hardware, configurations and policies with these graphs to gain end-to-end visibility of the entire system.</p>
+
+
+
+
+
+
+
+  <img src="/concepts/abstractions/info_graph/isa-95.png" width="500px">
+
+
+<p>Symphony offers several key platform-agnostic capabilities for modeling such a complex system:</p>
+<ul>
+<li>Modeling arbitrary information graph using Catalogs such as:
+<ul>
+<li>Asset trees</li>
+<li>BOMs</li>
+<li>Network topologies</li>
+<li>Application templates</li>
+<li>Configurations</li>
+<li>Policies</li>
+</ul>
+</li>
+<li>Modeling the entire stack of software on devices using Targets.</li>
+<li>Modeling applications using Solutions.</li>
+<li>Modeling application deployment topologies using Instances.</li>
+<li>Modeling AI pipelines using AI Skill.</li>
+<li>Modeling distributed workflows using Campaigns.</li>
+</ul>
+<p>And because Symphony allows live states to be associated with the information graph, you can use these information graphs to gain live insights of your systems from different perspectives of your choice.</p>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+<script src="/js/copy-code-button.js"></script>
+<script src="/js/clarity.js"></script>
+
+  </body>
+</html>
